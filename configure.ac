@@ -26,6 +26,10 @@ AC_INIT(font-sun-misc, [1.0.0], [https://bugs.freedesktop.org/enter_bug.cgi?prod
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
 
+# Require xorg-macros: XORG_RELEASE_VERSION XORG_CHANGELOG
+m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.2 or later before running autoconf/autogen])])
+XORG_MACROS_VERSION(1.2)
+
 AC_PROG_INSTALL
 
 AC_PATH_PROG(BDFTOPCF, bdftopcf)
@@ -48,5 +52,6 @@ AC_ARG_WITH(fontdir,
 AC_SUBST(FONTDIR)
 
 XORG_RELEASE_VERSION
+XORG_CHANGELOG
 
 AC_OUTPUT([Makefile])
