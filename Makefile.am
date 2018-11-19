@@ -39,7 +39,7 @@ fontdir = @FONTDIR@
 font_DATA = $(PCF_FILES)
 CLEANFILES = $(font_DATA)
 
-EXTRA_DIST = $(BDF_FILES) autogen.sh
+EXTRA_DIST = $(BDF_FILES) autogen.sh README.md
 
 MAINTAINERCLEANFILES = ChangeLog INSTALL
 
